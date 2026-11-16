@@ -1,0 +1,31 @@
+name: Project task
+description: Plan a focused piece of internship work.
+title: "[Task] "
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: What should be achieved, and why does it matter?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List observable conditions for completing this task.
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and context
+      description: Link related work, decisions, or blockers.
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification plan
+      description: How will the team demonstrate that this task is complete?
+    validations:
+      required: true

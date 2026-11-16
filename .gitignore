@@ -1,0 +1,13 @@
+# Local OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Local credentials and environment configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Add stack-specific generated files once the technology stack is chosen.
