@@ -6,7 +6,9 @@ configured separately; this document records the intended configuration.
 ## Access and rights
 
 - Owner / administrator: `STERILITZIA02`.
-- Team membership is pending. No additional collaborators are invited yet.
+- On 17 November 2026 (Pacific/Auckland), Write invitations were sent to
+  `ares608`, `mdayu2011`, `ElvisZong`, and `ShunxinzhuLi`. All four were pending
+  acceptance when checked. See GitHub Settings for current access status.
 - Future members should receive collaborator access without unnecessary
   administration privileges. Review access again at handover.
 - Visibility remains public. All rights are reserved under `LICENSE`;
