@@ -17,6 +17,9 @@ once the team agrees on the project and technology stack.
 
 ## Project documents
 
+- [Course Wiki](https://github.com/STERILITZIA02/Group-Internship/wiki): project description, team directory, weekly work statements, and course evidence.
+- [Wiki editing guide](docs/wiki-guide.md): page structure and publishing workflow.
+
 - [Project brief](docs/project-brief.md): scope, users, constraints, and success criteria.
 - [10-week roadmap](docs/roadmap.md): provisional weekly outcomes.
 - [Weekly update template](docs/weekly-update-template.md): progress, evidence, and blockers.

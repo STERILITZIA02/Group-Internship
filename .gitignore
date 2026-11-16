@@ -11,3 +11,6 @@ Thumbs.db
 !.env.*.example
 
 # Add stack-specific generated files once the technology stack is chosen.
+
+# Separate GitHub Wiki checkout (has its own remote and history)
+.wiki-local/

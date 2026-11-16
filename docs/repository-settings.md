@@ -30,7 +30,9 @@ configured separately; this document records the intended configuration.
 
 ## Features and security
 
-- Issues and Projects enabled; Wiki disabled in favor of versioned `docs/`.
+- Issues, Projects, and Wiki enabled. Wiki editing is restricted to collaborators.
+- The Wiki holds course-facing descriptions and weekly work statements;
+  repository `docs/` holds engineering and administration guidance.
 - GitHub Actions defaults to read-only repository access and cannot approve PRs.
   Workflows should request only the permissions they need.
 - Secret scanning and push protection enabled.
