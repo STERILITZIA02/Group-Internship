@@ -1,0 +1,8 @@
+[submodule "demos/Demo-3d"]
+	path = demos/Demo-3d
+	url = https://github.com/STERILITZIA02/Demo-3d.git
+	branch = main
+[submodule "demos/Demo-platform"]
+	path = demos/Demo-platform
+	url = https://github.com/STERILITZIA02/Demo-platform.git
+	branch = main

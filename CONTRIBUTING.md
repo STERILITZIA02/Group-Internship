@@ -6,6 +6,10 @@ transfer copyright or override university, employment, or internship agreements.
 
 ## Workflow
 
+Use the [Sprint board](https://github.com/users/STERILITZIA02/projects/2) and
+[agent workflow](docs/sprint-workflow.md) for planning and handoffs. Demo code
+lives in the [independent demo repositories](demos/README.md).
+
 1. Create or select an issue with a clear outcome and acceptance criteria.
 2. Assign an owner and choose the relevant weekly milestone when available.
 3. Branch from the latest `main`: `feat/short-description`,

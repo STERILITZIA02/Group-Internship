@@ -8,3 +8,4 @@
 - 图表遵循 `lieflat-charts`：沿用真实模板，优先 Lupi Editorial / Basics，同一交付统一色系，数据与视觉比例一致。
 - Prompt 和项目说明只保留任务所需信息；规则、流程和依赖随实际需要增加。
 - 本地文件检索优先 FastCtx；批量读取，机械替换用 `replace`，语义修改用 `apply_patch`。合同源文、Wiki 与 PDF 保持一致。
+- 主仓库集中规划任务；Demo 在各自子模块中开发和提 PR，合并后更新主仓库引用。接单与交接参考 `docs/sprint-workflow.md`，只记录目标、范围、验收、验证和剩余工作。

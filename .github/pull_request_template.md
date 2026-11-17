@@ -2,7 +2,9 @@
 
 ## Related issue
 
-Closes #
+Link the main planning issue. Use `Closes #123` only when this PR completes it.
+Demo PRs should use `Refs STERILITZIA02/Group-Internship#123`; close the planning
+issue after the required demo commit is recorded in the main repository.
 
 ## Verification
 
@@ -17,3 +19,6 @@ when useful; explicitly state anything that was not verified.
 - [ ] No secrets, personal data, or unapproved third-party material is included.
 
 ## Risks or follow-up work
+
+Include remaining work or an agent handoff when needed. For demo updates, record
+the demo PR, commit, and the main-repository submodule update.

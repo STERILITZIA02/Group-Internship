@@ -1,0 +1,24 @@
+name: Sprint plan and review
+description: A blank weekly plan, demo record, and retrospective.
+title: "[Sprint XX] "
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal and dates
+      description: Fill this in after the project brief and timetable are agreed.
+  - type: textarea
+    id: work
+    attributes:
+      label: Planned work and owners
+      description: Link issues in this sprint milestone. Mark unresolved decisions.
+  - type: textarea
+    id: review
+    attributes:
+      label: Review and demo
+      description: Actual results, evidence, demo commits, and work carried forward.
+  - type: textarea
+    id: retro
+    attributes:
+      label: Retrospective
+      description: What helped, what needs to change, and one action for next week.

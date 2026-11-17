@@ -18,6 +18,9 @@ once the team agrees on the project and technology stack.
 
 ## Project documents
 
+- [Sprint board](https://github.com/users/STERILITZIA02/projects/2) and [workflow guide](docs/sprint-workflow.md): planning, agent handoffs, review, and completion.
+- [Demo repositories](demos/README.md): independent `Demo-3d` and `Demo-platform` submodules.
+
 - [Course Wiki](https://github.com/STERILITZIA02/Group-Internship/wiki): project description, team directory, weekly work statements, and course evidence.
 - [Wiki editing guide](docs/wiki-guide.md): page structure and publishing workflow.
 - [Team contract](https://github.com/STERILITZIA02/Group-Internship/wiki/Contract) and [printable PDF](output/pdf/team-contract.pdf): working arrangements, task agreements, crisis management, and signatures.

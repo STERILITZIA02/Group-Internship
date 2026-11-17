@@ -2,6 +2,15 @@ name: Project task
 description: Plan a focused piece of internship work.
 title: "[Task] "
 body:
+  - type: dropdown
+    id: repository
+    attributes:
+      label: Implementation repository
+      options:
+        - Group-Internship
+        - Demo-3d
+        - Demo-platform
+        - To be decided
   - type: textarea
     id: outcome
     attributes:
@@ -22,6 +31,16 @@ body:
     attributes:
       label: Dependencies and context
       description: Link related work, decisions, or blockers.
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and starting context
+      description: Relevant files, current behaviour, constraints, and what is outside this task. Leave unknown details explicit.
+  - type: textarea
+    id: handoff
+    attributes:
+      label: Agent handoff (optional)
+      description: Record the branch, completed work, checks, remaining work, and any question that needs a person.
   - type: textarea
     id: verification
     attributes:
