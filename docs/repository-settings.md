@@ -15,6 +15,11 @@ configured separately; this document records the intended configuration.
   visibility and copyright permission are separate concerns.
 - Confirm university / employer ownership requirements before implementation.
 
+The four invited members have now accepted access to the main repository.
+Write access was also invited for both demos; acceptance is tracked separately
+in each repository. The private Sprint project includes the owner and all four
+members, with Write access for the members.
+
 ## Main branch and merging
 
 - Default branch: `main`.
@@ -23,12 +28,13 @@ configured separately; this document records the intended configuration.
 - Require linear history; permit squash merging only.
 - Disable force pushes and branch deletion on `main`.
 - Automatically delete merged task branches.
-- Administrator enforcement is initially disabled so the sole owner can
-  maintain the repository before other reviewers join. Revisit once the team
-  is added. Administrator bypass is an exception to the review workflow.
+- Administrator enforcement remains disabled for repository setup and
+  maintenance. Ordinary development uses the PR workflow.
 - Code ownership initially routes review requests to the repository owner.
   Mandatory code-owner approval is not enabled; distribute ownership later.
-- Required CI checks will be added once a real application and CI exist.
+- `Repository checks` is required in all three repositories. This checks
+  changed-file whitespace and recursive checkout, including demo references.
+  Build and application checks remain pending the technology stack.
 
 ## Features and security
 
@@ -40,6 +46,18 @@ configured separately; this document records the intended configuration.
 - Secret scanning and push protection enabled.
 - Dependency vulnerability alerts and private vulnerability reporting enabled.
 - No application workflow, deployment, hosting, or paid service is configured.
+
+## Sprint and agent setup
+
+- [Shared board](https://github.com/users/STERILITZIA02/projects/2): Todo,
+  In Progress, In Review, Done. Open main-repository Issues are auto-added.
+- Sprint 01–10 milestones are placeholders without dates or project topics.
+- Area, agent-ready, blocked, and high-priority labels support task routing.
+- Task and Sprint issue forms, PR templates, and concise AGENTS.md files are in place.
+- Codex automatic code review is set for all PRs on opening in the main
+  repository and both demos. Runtime review of a representative PR remains
+  to be checked when implementation starts.
+- Details and remaining placeholders: [readiness review](sprint-readiness.md).
 
 ## Still to decide
 
