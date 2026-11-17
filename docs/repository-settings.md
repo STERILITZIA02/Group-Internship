@@ -43,7 +43,8 @@ configured separately; this document records the intended configuration.
 
 ## Still to decide
 
-- Team usernames and responsibilities.
+- Responsibilities for Yingnan Li, Yi Zong, Shunxinzhu Li, and Lingyu Meng;
+  Junan Yu is the PM.
 - Challenge brief, start date, assessment criteria, and final deliverables.
 - Whether visibility should change to private.
 - Technology stack, CI checks, and deployment permissions.

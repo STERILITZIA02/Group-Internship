@@ -10,7 +10,7 @@ Status: awaiting the project owner's brief. Placeholders are not requirements.
 | Scope and exclusions | To be agreed |
 | Success / assessment criteria | To be provided |
 | Start and end dates | To be confirmed; duration is 10 weeks |
-| Team members and roles | To be confirmed |
+| Team members and roles | Junan Yu (PM), Yingnan Li, Yi Zong, Shunxinzhu Li, Lingyu Meng; four remaining roles to be agreed |
 | Supervisor / mentor | To be confirmed |
 | Technology stack | To be selected after requirements |
 | Data, integrations, and hosting | To be confirmed |

@@ -6,7 +6,7 @@ Calendar dates and technical deliverables will be set after the brief arrives.
 | Week | Focus | Suggested evidence |
 | --- | --- | --- |
 | 01 | Understand the challenge and form the team | Agreed brief, roles, initial backlog |
-| 02 | Explore options and reduce the largest risks | Research, feasibility demo, approach decision |
+| 02 | Discuss and sign the team contract; explore project options | Signed PDF due 24 November 2026 at noon; research and feasibility evidence |
 | 03 | Establish the first end-to-end slice | Runnable baseline and setup instructions |
 | 04 | Develop the first core capability | Demo against agreed acceptance criteria |
 | 05 | Integrate and review at the midpoint | Midpoint demo, feedback, revised backlog |

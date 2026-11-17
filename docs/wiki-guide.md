@@ -10,6 +10,7 @@ inputs; update relevant links when scope changes.
 ## Pages
 
 - Home, Project Description, Team, Course Requirements, and Project Plan.
+- Contract, including task agreements, crisis management, and the printable PDF.
 - Weekly Work Statements index and one page for each of Weeks 01–10.
 - Individual Work Statement Template for courses requiring separate statements.
 - Meeting Log, Decision and Risk Log, and Deliverables and Evidence.
@@ -42,6 +43,20 @@ member. Add or remove placeholder rows only after confirming the roster.
 Record actual hours, not estimates presented as actuals. Link evidence and
 identify who reviewed the final statement. Publishing a Wiki page does not
 submit it to the university's course system.
+
+## Contract PDF
+
+The editable contract is `docs/team-contract.md`. Its text is also published on
+the Wiki's Contract page. The printable copy is `output/pdf/team-contract.pdf`.
+After changing the source, regenerate the PDF with Python and ReportLab:
+
+```sh
+python3 scripts/export_team_contract.py
+```
+
+Update the Wiki text from the same source, retain the download link, and check
+the PDF pages before publishing. Print on A4 at actual size. The final page has
+five separate spaces for signatures and dates. The current PDF is unsigned.
 
 ## Public information
 

@@ -2,8 +2,9 @@
 
 A 10-week internship group challenge project.
 
-**Status:** repository setup. The project brief, team, technology stack, start
-date, and assessment requirements will be confirmed before implementation.
+The five-person team is listed in the Wiki, with Junan Yu as PM. A team contract
+is ready for discussion and signature. The project brief, technology stack,
+project dates, and remaining assessment requirements are still to be added.
 
 ## Getting started
 
@@ -19,6 +20,7 @@ once the team agrees on the project and technology stack.
 
 - [Course Wiki](https://github.com/STERILITZIA02/Group-Internship/wiki): project description, team directory, weekly work statements, and course evidence.
 - [Wiki editing guide](docs/wiki-guide.md): page structure and publishing workflow.
+- [Team contract](https://github.com/STERILITZIA02/Group-Internship/wiki/Contract) and [printable PDF](output/pdf/team-contract.pdf): working arrangements, task agreements, crisis management, and signatures.
 
 - [Project brief](docs/project-brief.md): scope, users, constraints, and success criteria.
 - [10-week roadmap](docs/roadmap.md): provisional weekly outcomes.
