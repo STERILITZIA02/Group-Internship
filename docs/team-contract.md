@@ -6,7 +6,8 @@ University of Auckland | 10-week internship group challenge
 
 | Project details | Entry |
 | --- | --- |
-| Team / project name | ________________________________________ |
+| Team name | luxluane |
+| Project name | ________________________________________ |
 | Course code | ________________________________________ |
 | Project dates | ________________________________________ |
 | Team communication channel | ________________________________________ |

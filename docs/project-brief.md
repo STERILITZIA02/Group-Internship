@@ -4,6 +4,7 @@ Status: awaiting the project owner's brief. Placeholders are not requirements.
 
 | Item | Decision |
 | --- | --- |
+| Team name | luxluane |
 | Challenge / problem statement | To be provided |
 | Target users / stakeholders | To be provided |
 | Expected outcome | To be provided |
