@@ -1,4 +1,9 @@
-# Group Internship
+# luxluane | Group Internship
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/brand/luxluane-dark-bg.png">
+  <img src="assets/brand/luxluane-light-bg.png" width="160" alt="luxluane">
+</picture>
 
 A 10-week internship group challenge project.
 

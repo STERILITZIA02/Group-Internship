@@ -98,18 +98,22 @@ def build():
 
     def footer(canvas, doc):
         canvas.saveState()
+        if doc.page == 1:
+            canvas.drawImage(str(ROOT / 'assets/brand/luxluane-light-bg.png'),
+                             PAGE_WIDTH - 55*mm, PAGE_HEIGHT - 31*mm,
+                             width=37*mm, height=37*mm * 336/1072, mask='auto')
         canvas.setStrokeColor(colors.HexColor('#ccd2d7'))
         canvas.line(18*mm, 15*mm, PAGE_WIDTH-18*mm, 15*mm)
         canvas.setFont('Helvetica', 8)
         canvas.setFillColor(colors.HexColor('#626c75'))
-        canvas.drawString(18*mm, 10*mm, 'Group Internship | Team Contract | Draft 17 November 2026')
+        canvas.drawString(18*mm, 10*mm, 'luxluane | Team Contract | Draft 17 November 2026')
         canvas.drawRightString(PAGE_WIDTH-18*mm, 10*mm, str(doc.page))
         canvas.restoreState()
 
     doc = SimpleDocTemplate(str(OUTPUT), pagesize=A4, leftMargin=18*mm,
                             rightMargin=18*mm, topMargin=17*mm, bottomMargin=22*mm,
-                            title='Group Internship - Team Contract',
-                            author='Group Internship team')
+                            title='luxluane - Team Contract',
+                            author='luxluane')
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
     print(OUTPUT)
 
