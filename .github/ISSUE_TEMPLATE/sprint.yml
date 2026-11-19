@@ -1,21 +1,15 @@
 name: Sprint review
-description: Record the demo, feedback, carry-over and one improvement.
-title: "[Sprint review] "
+description: Capture the demo and next actions.
 body:
   - type: textarea
     id: demo
     attributes:
-      label: Outcome and demo
-      description: Link the milestone and evidence for the sprint goal.
+      label: Demo
+      placeholder: Link the milestone and what the team demonstrated.
     validations:
       required: true
   - type: textarea
     id: followup
     attributes:
-      label: Feedback and carry-over
-      description: Link follow-up issues and record the next decision for unfinished work.
-  - type: textarea
-    id: retro
-    attributes:
-      label: Next sprint improvement
-      description: Choose one change to how the team works and who will try it.
+      label: Next actions
+      placeholder: Carry-over, feedback or one improvement to try.

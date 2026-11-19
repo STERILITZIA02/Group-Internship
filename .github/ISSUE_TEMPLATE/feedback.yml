@@ -1,22 +1,16 @@
 name: User feedback
-description: Capture an observation from a usability session.
-title: "[Feedback] "
-labels: ["user-feedback"]
+description: Capture a user observation or suggestion.
+labels: [user-feedback]
 body:
   - type: textarea
     id: observation
     attributes:
-      label: Task and observation
-      description: What was the participant trying to do? Where did they get stuck or need help?
+      label: Observation
+      placeholder: What was the person trying to do, and what happened?
     validations:
       required: true
   - type: textarea
-    id: evidence
-    attributes:
-      label: Reproduction or evidence
-      description: Record the device, build and steps. Link a relevant issue or session note.
-  - type: textarea
     id: retest
     attributes:
-      label: Retest
-      description: What would the participant be able to do after the change?
+      label: Follow-up
+      placeholder: A possible improvement, retest, screenshot or session note.
