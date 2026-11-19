@@ -7,7 +7,7 @@
 ## 1. Team and purpose
 
 Our goal is to develop a practical garden planning tool that helps users design their gardens, evaluate planting decisions and understand the long-term impact of their choices.
-We will use an Agile development approach, starting with user research and product design before moving into iterative development, testing and improvement. 
+We will use an Agile development approach, starting with user research and product design before moving into iterative development, testing and improvement.
 Our [Sprint Plan](https://github.com/STERILITZIA02/Group-Internship/wiki/Sprint-Plan)
 
 | Member | Role |
@@ -18,7 +18,7 @@ Our [Sprint Plan](https://github.com/STERILITZIA02/Group-Internship/wiki/Sprint-
 | Shunxinzhu Li | ______________________________ |
 | Lingyu Meng | ______________________________ |
 
-Junan coordinates the work and tracks deadlines. 
+Junan coordinates the work and tracks deadlines.
 
 
 All five members will participate in software development, testing and project discussions. Depending on project needs, responsibilities and workload may change.
@@ -29,7 +29,7 @@ We share responsibility for the quality of our product and all final deliverable
 We have to work five days a week, from Monday to Friday, with an expected commitment of eight hours per day and 40 hours per week for each member.
 Our standard working hours are set from 9:30 am to 5:30 pm, with 10-minute morning and afternoon tea breaks, and are flexible for each team member as needed. Evenings and weekends are normally reserved for personal time (if an urgent situation arises, this might change).
 
-This is our meeting schedule, including the estimated time and frequency for each type of meeting. 
+This is our meeting schedule, including the estimated time and frequency for each type of meeting.
 
 | Meeting | Frequency | Time / Duration | Purpose |
 | --- | --- | --- | --- |
@@ -49,7 +49,7 @@ In the GitHub Issue or shared task list, record the expected result, owner, targ
 
 ## 4. Communication and records
 
-Our team will mainly use face-to-face conversation and WeChat as the messaging channel. If there is an urgent decision, 
+Our team will mainly use face-to-face conversation and WeChat as the messaging channel. If there is an urgent decision,
 
 Check the team channel on working days and aim to acknowledge messages by the next working day. For an urgent decision, say what is blocked and when an answer is needed. Contact the PM directly if the message has not reached the people involved.
 
