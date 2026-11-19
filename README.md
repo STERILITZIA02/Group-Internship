@@ -15,7 +15,7 @@ For a real site, the scene will serve as a digital twin. Selecting a plant or fe
 
 AI agents will work through an open, documented Model Context Protocol (MCP) interface to inspect a scene, make authorised edits and verify the result. An operation log will connect each request to the changes it produced or the error it encountered.
 
-[Project overview](https://github.com/STERILITZIA02/Group-Internship/wiki/Project-Description) · [Sprint plan](https://github.com/STERILITZIA02/Group-Internship/wiki/Sprint-Plan) · [Project board](https://github.com/users/STERILITZIA02/projects/2)
+[Project overview](https://github.com/STERILITZIA02/Group-Internship/wiki/Project-Description) · [Editor architecture (中文)](docs/architecture.zh-CN.md) · [Sprint plan](https://github.com/STERILITZIA02/Group-Internship/wiki/Sprint-Plan) · [Project board](https://github.com/users/STERILITZIA02/projects/2)
 
 ## Development checkout
 
