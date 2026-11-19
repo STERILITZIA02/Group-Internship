@@ -1,14 +1,10 @@
 # Project rules
 
-- 项目为 10 周小组实习挑战，Junan Yu 任 PM。具体功能、技术栈和其余分工按后续确认内容实施。
-- 质量优先，保持实现简洁。实施前先探索项目已有能力和近期成熟、高效的实现，优先复用，避免重复造轮子与过度防御。
-- UI 样式使用统一设计 tokens；代码按职责模块化，复用公共能力，保持低耦合，只做当前需要的抽象。
-- 修改聚焦当前任务，保留其他人的工作。验证受影响的正常、异常与边界分支；测试和断言覆盖真实风险，避免重复、过量或仅复述实现，并说明验证结果。
-- 实施前梳理状态与转移，明确异步竞态、取消和清理行为；复杂流程显式建模，减少隐式状态组合导致的意外行为。
-- 版本号和升级节奏由用户确定；当前初始版本未定。变更记录只写实际完成的修改。
-- 文案直接、具体、简洁，英文自然可读。参考 `lieflat-less-ai-tone`；必要时用中文整理，再翻译并校对。保留事实、限定条件和课程要求。
-- UI: Avoid unnecessary secondary labels and descriptions. Let the layout do the explaining.
-- 图表遵循 `lieflat-charts`：沿用真实模板，优先 Lupi Editorial / Basics，同一交付统一色系，数据与视觉比例一致。
-- Prompt 和项目说明只保留任务所需信息；规则、流程和依赖随实际需要增加。
-- 本地文件检索优先 FastCtx；批量读取，机械替换用 `replace`，语义修改用 `apply_patch`。合同源文、Wiki 与 PDF 保持一致。
-- 主仓库集中规划任务；Demo 在各自子模块中开发和提 PR，合并后更新主仓库引用。接单与交接参考 `docs/sprint-workflow.md`，只记录目标、范围、验收、验证和剩余工作。
+- 产品范围与验收见 [Sprint Plan](https://github.com/STERILITZIA02/Group-Internship/wiki/Sprint-Plan)。任务归属与交接见 [Sprint workflow](docs/sprint-workflow.md)。
+- 实施前检查已有模块和近期成熟实现，优先复用。按职责拆分，保持低耦合，UI 样式使用统一设计 tokens。
+- 明确状态与转移，处理异步竞态、取消和清理。验证受影响的正常、异常与边界分支；测试和断言只覆盖真实风险。
+- 修改聚焦当前任务，保留其他人的工作。版本号与升级节奏由用户确定，变更记录只写已完成的修改。
+- 文档只写读者需要知道的事实、操作和结果。删去套话、无用的推理和重复强调；同一事实只在一处维护，其他位置直接链接。修订意见不写进成品。
+- 英文自然可读，参考 `lieflat-less-ai-tone`。UI: Avoid unnecessary secondary labels and descriptions. Let the layout do the explaining.
+- 图表沿用 `lieflat-charts` 的真实模板，优先 Lupi Editorial / Basics，统一色系，按真实比例呈现数据。
+- 本地检索优先 FastCtx；批量读取，机械替换用 `replace`，语义修改用 `apply_patch`。合同源文、Wiki 和打印版同步更新。

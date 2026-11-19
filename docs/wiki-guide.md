@@ -1,66 +1,19 @@
-# Course Wiki
+# Publishing the Wiki
 
-[Open the course Wiki](https://github.com/STERILITZIA02/Group-Internship/wiki).
-
-The Wiki is the canonical location for course-facing project descriptions,
-team details, weekly work statements, meeting records, and submission evidence.
-The project brief and technical documentation in this repository remain useful
-inputs; update relevant links when scope changes.
-
-## Pages
-
-- Home, Project Description, Team, Course Requirements, and Project Plan.
-- Contract, including task agreements, crisis management, and the printable PDF.
-- Weekly Work Statements index and one page for each of Weeks 01–10.
-- Individual Work Statement Template for courses requiring separate statements.
-- Meeting Log, Decision and Risk Log, and Deliverables and Evidence.
-- Sidebar and footer for navigation and draft status.
-
-The course rubric and official statement format have not yet been supplied.
-All weekly pages are drafts, with no claimed hours, completed work, or approval.
-Confirm the required fields, deadlines, word limits, and submission channel
-before treating these pages as course-ready submissions.
-
-## Editing and publishing
-
-Collaborators may use the Wiki's Edit button. Wiki changes are stored in a
-separate Git repository; code repository branch protection does not review
-Wiki edits. Have another group member check statements before course submission.
-
-For local editing, clone the Wiki inside this repository's ignored directory:
+Clone the [Wiki](https://github.com/STERILITZIA02/Group-Internship/wiki) alongside the project files:
 
 ```sh
 git clone https://github.com/STERILITZIA02/Group-Internship.wiki.git .wiki-local
-git -C .wiki-local pull --ff-only
 ```
 
-If `.wiki-local` already exists, only run the pull command. Edit its Markdown
-files, review the diff, commit the intended pages, and push to its default
-branch. Always pull first to preserve teammates' web edits. Do not force-push.
+For an existing checkout, run `git -C .wiki-local pull --ff-only` before editing. Commit the changed pages in that checkout and push to its `master` branch.
 
-Use each weekly page's individual-contribution section for every confirmed
-member. Add or remove placeholder rows only after confirming the roster.
-Record actual hours, not estimates presented as actuals. Link evidence and
-identify who reviewed the final statement. Publishing a Wiki page does not
-submit it to the university's course system.
+## Publish the team contract
 
-## Contract PDF
-
-The editable contract is `docs/team-contract.md`. Its text is also published on
-the Wiki's Contract page. The printable copy is `output/pdf/team-contract.pdf`.
-After changing the source, regenerate the PDF with Python and ReportLab:
+Edit [the English source](team-contract.md). From the repository root, use Python with ReportLab installed to regenerate the [A4 PDF](../output/pdf/team-contract.pdf):
 
 ```sh
 python3 scripts/export_team_contract.py
 ```
 
-Update the Wiki text from the same source, retain the download link, and check
-the PDF pages before publishing. Print on A4 at actual size. The final page has
-five separate spaces for signatures and dates. The current PDF is unsigned.
-
-## Public information
-
-The Wiki is public. Use agreed display names and GitHub handles in the team
-directory; contact emails used for invitations are not published by default.
-Keep student IDs, private feedback, credentials, and restricted evidence in
-the course's approved private system, linking only where appropriate.
+Check the signature page. Publish the same text on the [Contract page](https://github.com/STERILITZIA02/Group-Internship/wiki/Contract) and pin its source and PDF links to the commit containing that edition.

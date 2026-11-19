@@ -23,6 +23,7 @@ WIDTH = PAGE_WIDTH - 36 * mm
 def inline(text):
     text = escape(text)
     text = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text)
+    text = re.sub(r'\[([^\]]+)\]\((https://[^\s)]+)\)', r'<a href="\2"><u>\1</u></a>', text)
     return text
 
 
@@ -106,7 +107,6 @@ def build():
         canvas.line(18*mm, 15*mm, PAGE_WIDTH-18*mm, 15*mm)
         canvas.setFont('Helvetica', 8)
         canvas.setFillColor(colors.HexColor('#626c75'))
-        canvas.drawString(18*mm, 10*mm, 'luxluane | Team Contract | Draft 17 November 2026')
         canvas.drawRightString(PAGE_WIDTH-18*mm, 10*mm, str(doc.page))
         canvas.restoreState()
 
