@@ -10,4 +10,4 @@ Move the issue through **Todo → In Progress → In Review → Done** on the [b
 
 Add `agent-ready` when the issue names the target repository, starting files and how to verify the result. Give the agent the issue link and checkout. On handoff, record the PR or commit, checks run and any work still open.
 
-[Weekly outcomes](https://github.com/STERILITZIA02/Group-Internship/wiki/Sprint-Plan#proposed-weekly-plan) · [Pull request workflow](../CONTRIBUTING.md) · [Weekly statements](https://github.com/STERILITZIA02/Group-Internship/wiki/Weekly-Work-Statements)
+[Sprint goals and acceptance checks](https://github.com/STERILITZIA02/Group-Internship/wiki/Sprint-Plan#sprint-schedule) · [Pull request workflow](../CONTRIBUTING.md) · [Weekly statements](https://github.com/STERILITZIA02/Group-Internship/wiki/Weekly-Work-Statements)

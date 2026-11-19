@@ -1,5 +1,5 @@
 name: Sprint plan and review
-description: Weekly goals, demos and follow-up.
+description: Goals, review and follow-up for a two-week sprint.
 title: "[Sprint XX] "
 body:
   - type: textarea
