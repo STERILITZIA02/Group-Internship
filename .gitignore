@@ -10,7 +10,11 @@ Thumbs.db
 !.env.example
 !.env.*.example
 
-# Add stack-specific generated files once the technology stack is chosen.
+node_modules/
+dist/
+/data/
+/test-results/
+/playwright-report/
 
 # Separate GitHub Wiki checkout (has its own remote and history)
 .wiki-local/

@@ -1,0 +1,16 @@
+{
+  "name": "@garden/api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.ts",
+    "start": "node src/server.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@garden/scene": "workspace:*",
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "fastify": "5.12.8",
+    "zod": "4.6.7"
+  }
+}
