@@ -17,12 +17,59 @@ AI agents will work through an open, documented Model Context Protocol (MCP) int
 
 [Project overview](https://github.com/STERILITZIA02/Group-Internship/wiki/Project-Description) · [Editor architecture (中文)](docs/architecture.zh-CN.md) · [Sprint plan](https://github.com/STERILITZIA02/Group-Internship/wiki/Sprint-Plan) · [Project board](https://github.com/users/STERILITZIA02/projects/2)
 
-## Development checkout
+## Run the local editor
+
+Use Node.js **24.22.2** and pnpm **10.8.0**. The workspace and CI use the same lockfile.
 
 ```sh
 git clone --recurse-submodules https://github.com/STERILITZIA02/Group-Internship.git
 cd Group-Internship
+npm install --global pnpm@10.8.0
+pnpm install --frozen-lockfile
+pnpm dev
 ```
+
+Open `http://127.0.0.1:5173`. Start with an empty grid, choose a polygon and click **Add polygon**. Dragging snaps to a 0.25 m grid. The inspector accepts exact X/Z coordinates in metres, rotation in degrees and uniform scale. Drag the background to orbit, or use two fingers to pan and zoom.
+
+Edits save to `data/scene.json` on the computer running the service. **Export JSON** downloads a portable scene and **Open file** imports it. **Reload** reads the latest saved revision, including edits made by an MCP client. A conflicting edit stays available to export. To use a different working file, set `SCENE_FILE` to an absolute path before startup.
+
+| Location | Responsibility |
+| --- | --- |
+| `packages/scene` | Versioned scene format, commands and transform rules. Metres, Y up, north along −Z. Stored rotations are radians. |
+| `apps/web` | Vue inspector, pointer gestures and an on-demand Three.js viewport. The object list and numeric editor also work without WebGL 2. |
+| `apps/api` | Local Fastify service on port 4174. Saves one complete revision by atomic rename. Browser and MCP writes share the same queue and revision check. |
+
+### Agent access
+
+With `pnpm dev` running, add a stdio MCP server in your client. Use `node` as the command and the absolute path to `apps/api/src/mcp.ts` as its only argument. Call `get_scene`, then `apply_command` with the returned `baseRevision` and a command. For example, on an empty scene at revision 0:
+
+```json
+{
+  "baseRevision": 0,
+  "command": {
+    "type": "add",
+    "polygon": {
+      "id": "642edcbe-43ca-47d4-a3cc-ee1258a690cb",
+      "sides": 3,
+      "transform": { "x": 0, "z": 0, "rotation": 0, "scale": 1 }
+    }
+  }
+}
+```
+
+Call `get_scene` again to verify the edit. Start with `DEBUG_SCENE=1 pnpm dev` to trace a command ID to its result in the API terminal. This service runs on loopback and uses the local user's filesystem.
+
+### Checks
+
+```sh
+pnpm check
+pnpm exec playwright install chromium
+pnpm test:browser
+```
+
+`pnpm check` checks formatting and TypeScript, exercises file persistence and MCP, and builds the web app. Browser checks run the production build against a temporary working file on ports 4185–4186.
+
+## Demo repositories
 
 | Repository | Contents |
 | --- | --- |

@@ -1,0 +1,27 @@
+{
+  "name": "garden-workspace",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.8.0",
+  "engines": {
+    "node": "24.22.2",
+    "pnpm": "10.8.0"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter @garden/api --filter @garden/web run dev",
+    "api": "pnpm --filter @garden/api start",
+    "mcp": "node apps/api/src/mcp.ts",
+    "typecheck": "pnpm -r --if-present run typecheck && tsc -p tsconfig.tools.json",
+    "test": "node --test apps/api/test/*.test.ts",
+    "build": "pnpm --filter @garden/web build",
+    "format:check": "prettier --check apps packages e2e playwright.config.ts",
+    "test:browser": "playwright test",
+    "check": "pnpm format:check && pnpm typecheck && pnpm test && pnpm build"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "@types/node": "24.19.2",
+    "prettier": "3.10.1",
+    "typescript": "5.9.3"
+  }
+}
