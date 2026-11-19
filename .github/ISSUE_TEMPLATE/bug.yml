@@ -1,28 +1,18 @@
 name: Bug report
 description: Report a reproducible problem.
-title: "[Bug] "
 labels: [bug]
 body:
   - type: textarea
     id: reproduction
     attributes:
-      label: Steps to reproduce
+      label: How to reproduce
+      placeholder: Device, steps or sample deck.
     validations:
       required: true
   - type: textarea
-    id: expected
+    id: result
     attributes:
-      label: Expected behavior
+      label: Result
+      placeholder: What happened? What did you expect? Attach a screenshot or log ID if useful.
     validations:
       required: true
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual behavior
-    validations:
-      required: true
-  - type: textarea
-    id: environment
-    attributes:
-      label: Environment and evidence
-      description: Version, platform, and sanitized logs or screenshots.

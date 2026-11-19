@@ -1,23 +1,17 @@
 name: Project task
-description: Define a deliverable and its acceptance check.
-title: "[Task] "
+description: Describe the change and how to check it.
 body:
   - type: textarea
     id: outcome
     attributes:
       label: Outcome
-      description: What should someone be able to do when this ships?
+      placeholder: What should the user or developer be able to do?
     validations:
       required: true
   - type: textarea
     id: acceptance
     attributes:
-      label: Acceptance check
-      description: Give the steps and observable result.
+      label: Quick check
+      placeholder: One action and its expected result.
     validations:
       required: true
-  - type: textarea
-    id: context
-    attributes:
-      label: Implementation context
-      description: Link starting files, dependencies or decisions that affect the work.
