@@ -46,15 +46,16 @@ test('blank scene, WebGL drag, numeric edit and file round trip', async ({ page 
   await expect(page.getByLabel('X (m)', { exact: true })).toHaveValue('2.5')
   expect((await (await page.request.get('/api/scene')).json()).scene).toEqual(exported)
 })
-test('touch: adding a second finger cancels an object drag', async ({ browser }) => {
+test('touch: adding a second finger cancels an object drag', async ({ browser, baseURL }) => {
   const context = await browser.newContext({
     hasTouch: true,
+    baseURL,
     isMobile: true,
     viewport: { width: 390, height: 844 },
   })
   const page = await context.newPage()
   try {
-    await page.goto('http://127.0.0.1:4186/')
+    await page.goto('/')
     await expect(page.getByRole('button', { name: 'Reset view' })).toBeVisible()
     const snap = await (await page.request.get('/api/scene')).json()
     const polygon = {

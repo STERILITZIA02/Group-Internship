@@ -43,6 +43,7 @@ test('disk saves survive restart, competing revisions and invalid imports', asyn
   }
   const writes = await Promise.all([edit(request(1, update)), edit(request(1, update))])
   assert.deepEqual(writes.map((r) => r.statusCode).sort(), [200, 409])
+  assert.equal(writes.find((r) => r.statusCode === 409)?.json().code, 'revision_conflict')
   const bytes = await readFile(file, 'utf8')
   const reopened = createApp(file)
   t.after(() => reopened.close())
@@ -57,10 +58,9 @@ test('disk saves survive restart, competing revisions and invalid imports', asyn
     ).statusCode,
     400,
   )
-  assert.equal(
-    (await edit(request(2, { type: 'remove', id: crypto.randomUUID() }))).statusCode,
-    422,
-  )
+  const missing = await edit(request(2, { type: 'remove', id: crypto.randomUUID() }))
+  assert.equal(missing.statusCode, 422)
+  assert.equal(missing.json().code, 'polygon_missing')
   assert.equal(await readFile(file, 'utf8'), bytes)
   await writeFile(file, 'unreadable')
   assert.equal((await edit(request(2, update))).statusCode, 500)
@@ -97,5 +97,6 @@ test('stdio MCP and HTTP see the same revision, edit and conflict', async (t) =>
   assert.deepEqual(read.content, [{ type: 'text', text: JSON.stringify(snapshot) }])
   const conflict = await client.callTool({ name: 'apply_command', arguments: args })
   assert.equal(conflict.isError, true)
+  assert.match(JSON.stringify(conflict.content), /revision_conflict/)
   assert.match(JSON.stringify(conflict.content), new RegExp(args.commandId))
 })

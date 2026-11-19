@@ -2,8 +2,10 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { requestSchema } from '@garden/scene'
 import { z } from 'zod'
+import { localService } from '../../../config/local-service.ts'
+import { sceneRoutes } from '@garden/scene/protocol'
 
-const api = 'http://127.0.0.1:' + (process.env.SCENE_API_PORT ?? '4174') + '/api/scene'
+const { origin } = localService()
 const server = new McpServer({ name: 'local-scene', version: '1.0.0' })
 async function call(url: string, init?: RequestInit) {
   const response = await fetch(url, init)
@@ -13,7 +15,7 @@ async function call(url: string, init?: RequestInit) {
   }
 }
 server.registerTool('get_scene', { description: 'Read the local scene and its revision.' }, () =>
-  call(api),
+  call(origin + sceneRoutes.read),
 )
 server.registerTool(
   'apply_command',
@@ -26,7 +28,7 @@ server.registerTool(
     },
   },
   (edit) =>
-    call(api + '/commands', {
+    call(origin + sceneRoutes.commands, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ ...edit, commandId: edit.commandId ?? crypto.randomUUID() }),

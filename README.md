@@ -39,6 +39,12 @@ Edits save to `data/scene.json` on the computer running the service. **Export JS
 | `apps/web` | Vue inspector, pointer gestures and an on-demand Three.js viewport. The object list and numeric editor also work without WebGL 2. |
 | `apps/api` | Local Fastify service on port 4174. Saves one complete revision by atomic rename. Browser and MCP writes share the same queue and revision check. |
 
+### Extend the editor
+
+- **Theme.** Edit the [CSS tokens](apps/web/src/styles/tokens.css). For a named theme, override them under `:root[data-theme="name"]` and set that attribute on the document root. The four `--viewport-*` colours take sRGB hex values and update the live canvas.
+- **Language.** Add a catalog beside [English](apps/web/src/i18n/locales/en.ts) and register its language tag and text direction in the [locale registry](apps/web/src/i18n/index.ts). Keep named placeholders such as `{shape}` and `{index}` in the translation. The editor matches browser language preferences and falls back to English.
+- **Interaction.** The [polygon presets](apps/web/src/editor/polygons.ts) supply both the creation menu and object names. [Editor settings](apps/web/src/editor/settings.ts) control placement and snapping. [Viewport settings](apps/web/src/viewport/settings.ts) control the camera, grid and rendering budget.
+
 ### Agent access
 
 With `pnpm dev` running, add a stdio MCP server in your client. Use `node` as the command and the absolute path to `apps/api/src/mcp.ts` as its only argument. Call `get_scene`, then `apply_command` with the returned `baseRevision` and a command. For example, on an empty scene at revision 0:
@@ -67,7 +73,7 @@ pnpm exec playwright install chromium
 pnpm test:browser
 ```
 
-`pnpm check` checks formatting and TypeScript, exercises file persistence and MCP, and builds the web app. Browser checks run the production build against a temporary working file on ports 4185–4186.
+`pnpm check` runs formatting, lint, type checks, file, MCP and locale tests, then builds the web app. Browser checks exercise the production build against a temporary scene, including a theme change with a polygon selected.
 
 ## Demo repositories
 

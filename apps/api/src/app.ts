@@ -1,14 +1,35 @@
 import Fastify from 'fastify'
 import { requestSchema } from '@garden/scene'
-import { createStore, EditError } from './store.ts'
+import { errorMessages, SceneError, sceneRoutes, type SceneErrorCode } from '@garden/scene/protocol'
+import { createStore } from './store.ts'
+
+const statusFor = {
+  invalid_request: 400,
+  revision_conflict: 409,
+  polygon_exists: 422,
+  polygon_missing: 422,
+  storage_error: 500,
+} satisfies Record<SceneErrorCode, number>
 
 export function createApp(file: string, debug = false) {
   const app = Fastify({ logger: debug })
   const store = createStore(file)
-  app.get('/api/scene', () => store.read())
-  app.post('/api/scene/commands', async (request, reply) => {
+  app.get(sceneRoutes.read, async (request, reply) => {
+    try {
+      return await store.read()
+    } catch (err) {
+      request.log.error({ err }, 'Read failed')
+      return reply
+        .code(statusFor.storage_error)
+        .send({ code: 'storage_error', message: errorMessages.storage_error })
+    }
+  })
+  app.post(sceneRoutes.commands, async (request, reply) => {
     const parsed = requestSchema.safeParse(request.body)
-    if (!parsed.success) return reply.code(400).send({ message: parsed.error.issues[0].message })
+    if (!parsed.success)
+      return reply
+        .code(statusFor.invalid_request)
+        .send({ code: 'invalid_request', message: parsed.error.issues[0].message })
     const edit = parsed.data
     const log = request.log.child({ commandId: edit.commandId, operation: edit.command.type })
     try {
@@ -17,11 +38,10 @@ export function createApp(file: string, debug = false) {
       return { ...snapshot, commandId: edit.commandId }
     } catch (err) {
       log.error({ err }, 'Edit failed')
-      if (err instanceof EditError)
-        return reply.code(err.status).send({ commandId: edit.commandId, message: err.message })
+      const code = err instanceof SceneError ? err.code : 'storage_error'
       return reply
-        .code(500)
-        .send({ commandId: edit.commandId, message: 'Could not read or save the local scene file' })
+        .code(statusFor[code])
+        .send({ commandId: edit.commandId, code, message: errorMessages[code] })
     }
   })
   return app

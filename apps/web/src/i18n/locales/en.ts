@@ -1,0 +1,60 @@
+import type { EditorErrorCode } from '../../editor/useScene'
+
+export const en = {
+  page: { title: 'Scene editor · LuxLuane', heading: 'Scene editor' },
+  files: {
+    label: 'Scene files',
+    open: 'Open file',
+    export: 'Export JSON',
+    replace: 'Replace the current scene with this file?',
+  },
+  viewport: {
+    label: 'Scene viewport',
+    canvas: '3D polygon editor',
+    loading: 'Loading viewport…',
+    unavailable: '3D unavailable. Use the object list and numeric controls.',
+    camera: 'Camera controls',
+    zoomIn: 'Zoom in',
+    zoomOut: 'Zoom out',
+    reset: 'Reset view',
+  },
+  objects: {
+    heading: 'Objects',
+    shape: 'Polygon shape',
+    add: 'Add polygon',
+    item: '{shape} {index}',
+    generic: '{sides}-gon',
+    triangle: 'Triangle',
+    square: 'Square',
+    pentagon: 'Pentagon',
+    hexagon: 'Hexagon',
+  },
+  transform: {
+    heading: 'Transform',
+    x: 'X (m)',
+    z: 'Z (m)',
+    degrees: 'Rotation (°)',
+    scale: 'Scale',
+    apply: 'Apply',
+    remove: 'Remove',
+  },
+  sync: {
+    working: 'Working…',
+    unsaved: 'Unsaved changes',
+    saved: 'Local file · revision {revision}',
+    offline: 'Local file offline',
+    reload: 'Reload',
+    keepEdit: 'Export a copy to keep your edit before reloading.',
+  },
+  errors: {
+    invalid_request: 'The editor could not apply this request.',
+    revision_conflict: 'Scene changed. Reload the current version.',
+    polygon_exists: 'A polygon with this ID already exists.',
+    polygon_missing: 'This polygon no longer exists.',
+    storage_error: 'Could not read or save the local scene file.',
+    load_failed: 'Could not open the local scene.',
+    save_failed: 'Could not reach the scene service to save this edit.',
+    invalid_file: 'Could not open this file. Choose a version {version} scene JSON.',
+  } satisfies Record<EditorErrorCode, string>,
+}
+export type EditorMessages = typeof en
