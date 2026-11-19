@@ -2,12 +2,12 @@
 
 University of Auckland | 10-week internship group challenge
 
-**Draft for team discussion - 17 November 2026.** The arrangements below are proposed for the five members to discuss and sign. Project details and the remaining roles will be added when agreed.
+**Draft for team discussion - 19 November 2026.** All five members will review this draft before signing.
 
 | Project details | Entry |
 | --- | --- |
 | Team name | luxluane |
-| Project name | ________________________________________ |
+| Project name | Topic 9 - Landscape and Garden Planning |
 | Course code | ________________________________________ |
 | Project dates | ________________________________________ |
 | Team communication channel | ________________________________________ |
@@ -15,7 +15,7 @@ University of Auckland | 10-week internship group challenge
 
 ## 1. Team and purpose
 
-We will work together to deliver the agreed project over ten weeks. Each person will take responsibility for their tasks, help resolve problems, and contribute to the team's final submission and presentation.
+Over ten weeks we will build a garden planner for phones and tablets. A household can try two spots for the same tree, save its choice and reopen the plan when the tree needs care. Each member will own tasks, help resolve problems and contribute to the final submission and presentation.
 
 | Member | Role |
 | --- | --- |
@@ -39,9 +39,11 @@ We propose a 20-30 minute planning meeting early in the week and a short progres
 
 ## 3. Task agreements and workload
 
-At weekly planning, we will divide work according to availability, skills, and learning goals. Each task will have an owner, an expected result, a target date, and a way to check completion. A second person can help or review where useful. Larger tasks can be split into smaller pieces.
+The [Sprint Plan](https://github.com/STERILITZIA02/Group-Internship/wiki/Sprint-Plan) records our feature commitments. Households will be able to place plants and features on a scaled 3D plan, preview mature size and shade, and see why a plant suits a spot, with sources for NZ plant safety and biosecurity. They can compare access, hose routes, cost and upkeep, then use planting dates and weather to plan tasks, set reminders and revisit past changes. AI planning help is optional for the household.
 
-Use a GitHub Issue or the shared task list to record the following task agreement:
+At weekly planning, we will choose the work, owner, target date and completion check together, taking account of availability, skills and learning goals. We can split a task or ask a second person to help. The team will choose its tools as it tries them.
+
+Record each task in a GitHub Issue or the shared task list.
 
 | Task agreement | Entry |
 | --- | --- |
@@ -51,9 +53,9 @@ Use a GitHub Issue or the shared task list to record the following task agreemen
 | Completion check / evidence | ________________________________________ |
 | Dependency or support needed | ________________________________________ |
 
-The owner will give a short update at the next check-in. If a task is taking longer than expected, they will explain what remains and suggest a new date, a smaller scope, or help from another member. Changes can be agreed in the team channel and recorded with the task.
+At the next check-in, the owner will report what remains. If the task needs more time, agree on a new date, a smaller task or extra help in the team channel, and record the change with the task.
 
-We will review the workload each week. Research, testing, documentation, coordination, and helping others count as contributions alongside implementation. The aim is a fair contribution across the project; everyone's task count or hours need not match each week.
+We will review workload weekly. Research, testing, writing, coordination and helping teammates count alongside development. We aim for a fair share over ten weeks. Hours and task counts can vary from week to week.
 
 ## 4. Communication and records
 
@@ -65,15 +67,15 @@ Keep a short note of decisions, task changes, and meeting actions in the Wiki or
 
 ## 5. Collaboration and quality
 
-Keep shared work in the repository so another member can pick it up. Ask for help when blocked and explain unfinished work when handing it over. Use pull requests and the repository's review process for code changes. Check work against the task's completion criteria before calling it done.
+Keep shared work in the repository, review code in pull requests and tell the next person what still needs doing. Check each task against its agreed result. When comparing tree positions, use the same date, time, canopy and viewpoint. Walk the bin and watering routes with the people who use them.
 
-We share responsibility for the project outcome and will credit each person's work. Shared responsibility does not change the repository's existing ownership or licence arrangements. Sources and any assistance will be acknowledged as the course requires.
+We share responsibility for delivery and credit each person's work. Existing ownership and licence terms still apply. We acknowledge sources and assistance as the course requires.
 
 <!-- pagebreak -->
 
 ## 6. Decisions and disagreements
 
-The person doing a task can make routine implementation decisions within its agreed scope. Changes affecting other members, the project scope, or a course deadline will be discussed with the group.
+The task owner can make day-to-day implementation decisions. Discuss changes to scope, another member's work or a course deadline with the group. Record any agreed feature change in the Sprint Plan.
 
 For a group decision, hear the affected members' views and try to agree on a practical option. If discussion stalls, use a simple majority after all five members have had a reasonable chance to comment. The PM records the decision and any follow-up. We can revisit it when new evidence appears.
 
@@ -127,10 +129,10 @@ Person responsible for submitting the signed PDF: ____________________
 
 The lecture slide specifies **Tuesday 24 November 2026, 12 noon (Week 2)**. Submit the signed and dated contract as a PDF by email to **steffan.hooper@auckland.ac.nz**. Use Auckland local time for planning.
 
-Before sending, fill in the team details, agree on the remaining roles and working arrangements, and collect all five signatures and dates. The submitter should keep a copy of the signed PDF and the sent email.
+Before sending, confirm the team details and working arrangements, record the roles agreed so far, and collect all five signatures and dates. The submitter should keep a copy of the signed PDF and the sent email.
 
 ## Basis of this draft
 
 Prepared from the supplied lecture slides on Team Identity, Team Contract, Quality Team Contracts, Team Challenges, and Drafting / Developing a Team Contract. The slides ask teams to negotiate their own fair, specific, and realistic agreement and to have every member sign and date it.
 
-The response times, meeting pattern, and escalation steps in this draft are proposals for this team to discuss. The two-hour response time shown in the lecture is an example. The project brief, course code, dates, communication channel, and four remaining roles will be supplied by the team.
+The team selected Topic 9 on 19 November 2026. Project dates, the communication channel, meeting details and four roles remain open. The proposed response times, meeting pattern and escalation steps are for the team to discuss. The lecture gives two hours as an example response time.
