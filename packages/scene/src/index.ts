@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { SceneError } from './protocol.ts'
+import { SceneError } from './errors.ts'
 
 const number = z.number().finite()
 export const sceneFormat = { schemaVersion: 1, units: 'm', north: '-Z' } as const

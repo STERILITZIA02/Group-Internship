@@ -11,7 +11,7 @@ export default defineConfig([
     files: ['**/*.vue'],
     languageOptions: { parser: vueParser, parserOptions: { parser: tsParser } },
     rules: {
-      'vue/no-bare-strings-in-template': ['error', { allowlist: ['△', '+', '−'] }],
+      'vue/no-bare-strings-in-template': ['error', { allowlist: [] }],
       'vue/no-useless-mustaches': 'error',
     },
   },

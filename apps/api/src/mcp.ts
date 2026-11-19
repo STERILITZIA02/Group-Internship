@@ -1,9 +1,8 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { requestSchema } from '@garden/scene'
-import { z } from 'zod'
 import { localService } from '../../../config/local-service.ts'
-import { sceneRoutes } from '@garden/scene/protocol'
+import { commandRequest, sceneRoutes } from '@garden/scene/protocol'
 
 const { origin } = localService()
 const server = new McpServer({ name: 'local-scene', version: '1.0.0' })
@@ -24,14 +23,13 @@ server.registerTool(
     inputSchema: {
       baseRevision: requestSchema.shape.baseRevision,
       command: requestSchema.shape.command,
-      commandId: z.uuid().optional(),
+      commandId: requestSchema.shape.commandId.optional(),
     },
   },
   (edit) =>
-    call(origin + sceneRoutes.commands, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ ...edit, commandId: edit.commandId ?? crypto.randomUUID() }),
-    }),
+    call(
+      origin + sceneRoutes.commands,
+      commandRequest({ ...edit, commandId: edit.commandId ?? crypto.randomUUID() }),
+    ),
 )
 await server.connect(new StdioServerTransport())

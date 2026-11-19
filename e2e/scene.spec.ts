@@ -87,7 +87,19 @@ test('touch: adding a second finger cancels an object drag', async ({ browser, b
       { x: x + 50, y: y + 30, id: 2 },
     ])
     await touch('touchEnd', [])
+    await expect(page.getByRole('button', { name: 'Properties', exact: true })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    )
+    await expect(page.getByLabel('X (m)', { exact: true })).toHaveValue('0')
+    expect(await page.locator('canvas').boundingBox()).toEqual(b)
+    await page.getByRole('button', { name: 'Objects', exact: true }).click()
     await expect(page.getByRole('button', { name: 'Square 1' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    )
+    await page.getByRole('button', { name: 'Square 1' }).click()
+    await expect(page.getByRole('button', { name: 'Properties', exact: true })).toHaveAttribute(
       'aria-pressed',
       'true',
     )

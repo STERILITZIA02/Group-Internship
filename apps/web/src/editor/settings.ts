@@ -1,10 +1,10 @@
 // Editing distances are in scene metres and camera angles are in radians.
 export const editing = {
   snapStep: 0.25,
+  dragThresholdPx: 4,
   placementColumns: 4,
   placementSpacing: 2.25,
   angleDecimals: 6,
-  minimumInputScale: 0.000001,
 } as const
 
 export const cameraControls = {
