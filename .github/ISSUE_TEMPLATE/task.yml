@@ -1,5 +1,5 @@
 name: Project task
-description: Plan a focused piece of internship work.
+description: Propose a change and define how to verify it.
 title: "[Task] "
 body:
   - type: dropdown
@@ -35,7 +35,7 @@ body:
     id: scope
     attributes:
       label: Scope and starting context
-      description: Relevant files, current behaviour, constraints, and what is outside this task. Leave unknown details explicit.
+      description: Relevant files, current behaviour and constraints.
   - type: textarea
     id: handoff
     attributes:

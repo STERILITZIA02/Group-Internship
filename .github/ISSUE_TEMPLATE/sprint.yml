@@ -1,12 +1,11 @@
 name: Sprint plan and review
-description: A blank weekly plan, demo record, and retrospective.
+description: Weekly goals, demos and follow-up.
 title: "[Sprint XX] "
 body:
   - type: textarea
     id: goal
     attributes:
       label: Goal and dates
-      description: Fill this in after the project brief and timetable are agreed.
   - type: textarea
     id: work
     attributes:

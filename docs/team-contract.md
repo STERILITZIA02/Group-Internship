@@ -1,6 +1,6 @@
 # Team Contract
 
-**luxluane · Topic 9 · Landscape and Garden Planning**
+**luxluane · Landscape and Garden Planning**
 
 19 November 2026
 
