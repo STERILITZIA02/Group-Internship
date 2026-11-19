@@ -8,3 +8,9 @@
 - 英文自然可读，参考 `lieflat-less-ai-tone`。UI: Avoid unnecessary secondary labels and descriptions. Let the layout do the explaining.
 - 图表沿用 `lieflat-charts` 的真实模板，优先 Lupi Editorial / Basics，统一色系，按真实比例呈现数据。
 - 本地检索优先 FastCtx；批量读取，机械替换用 `replace`，语义修改用 `apply_patch`。合同源文、Wiki 和打印版同步更新。
+
+## 开发者模式与 MCP
+
+- 提供显式的调试日志开关，生产环境默认关闭详细日志。关键操作记录操作名、关联 ID、结果和失败原因，让开发者能沿一次操作追踪前后端。只记录定位问题所需的字段，凭据和完整用户内容不写入日志。
+- 开发或变更供 agent 使用的工作流时，在同一项任务中交付或更新 MCP 工具。工具调用与界面共用应用服务、校验和账号权限，定义清楚输入、结果和错误。优先让 agent 能读取相关状态、执行指定操作并回读结果。
+- 在开发工作区用 MCP 客户端走通一个成功场景和一个相关失败场景，核对返回结果、实际状态和对应日志。将启动方式、日志开关及最小调用示例放在实现所在仓库的 README。
