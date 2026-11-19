@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { localService, defaultWebPort } from '../../config/local-service.ts'
 
-const proxy = { '/api': 'http://127.0.0.1:' + (process.env.SCENE_API_PORT ?? '4174') }
+const api = localService()
+const proxy = { '/api': api.origin }
 
 export default defineConfig({
   plugins: [vue()],
-  server: { host: '127.0.0.1', port: 5173, strictPort: true, proxy },
+  server: { host: api.host, port: defaultWebPort, strictPort: true, proxy },
   preview: { proxy },
 })

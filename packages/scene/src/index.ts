@@ -1,6 +1,8 @@
 import { z } from 'zod'
+import { SceneError } from './protocol.ts'
 
 const number = z.number().finite()
+export const sceneFormat = { schemaVersion: 1, units: 'm', north: '-Z' } as const
 export const transformSchema = z.strictObject({
   x: number,
   z: number,
@@ -14,9 +16,9 @@ export const polygonSchema = z.strictObject({
 })
 export const sceneSchema = z
   .strictObject({
-    schemaVersion: z.literal(1),
-    units: z.literal('m'),
-    north: z.literal('-Z'),
+    schemaVersion: z.literal(sceneFormat.schemaVersion),
+    units: z.literal(sceneFormat.units),
+    north: z.literal(sceneFormat.north),
     polygons: z.array(polygonSchema),
   })
   .refine(
@@ -48,17 +50,17 @@ export type Snapshot = z.infer<typeof snapshotSchema>
 export type EditRequest = z.infer<typeof requestSchema>
 
 export function emptyScene(): Scene {
-  return { schemaVersion: 1, units: 'm', north: '-Z', polygons: [] }
+  return { ...sceneFormat, polygons: [] }
 }
 
 export function applyCommand(scene: Scene, command: Command): Scene {
   if (command.type === 'open') return command.scene
   if (command.type === 'add') {
     if (scene.polygons.some((p) => p.id === command.polygon.id))
-      throw new Error('Polygon ID already exists')
+      throw new SceneError('polygon_exists')
     return { ...scene, polygons: [...scene.polygons, command.polygon] }
   }
-  if (!scene.polygons.some((p) => p.id === command.id)) throw new Error('Polygon no longer exists')
+  if (!scene.polygons.some((p) => p.id === command.id)) throw new SceneError('polygon_missing')
   const polygons =
     command.type === 'remove'
       ? scene.polygons.filter((p) => p.id !== command.id)

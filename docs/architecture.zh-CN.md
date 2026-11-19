@@ -2,20 +2,20 @@
 
 桌面、平板和手机打开同一份庭院。用户可以在手机上把树移到围栏旁，在平板上比较两个树位的晚餐树影，再从电脑打开选定方案和养护记录。
 
-前端采用 **Vue 3、TypeScript、Vite、Three.js**，首版 3D 使用 **WebGL 2**。后端采用 **Node.js LTS、Fastify、PostgreSQL**。Supabase 提供账号、托管数据库和模型文件存储。Web 和 API 分别部署，MCP 与 HTTP 共用一个 API 进程。仓库用 pnpm workspace 管理。
+当前开发基座使用 Vue 3、TypeScript、Vite 和 Three.js。Fastify 将多边形场景写入本地 JSON 文件，MCP 客户端通过同一服务读写。托管版规划使用 Supabase 管理账号、PostgreSQL 和模型文件。[本地启动与检查](../README.md#run-the-local-editor)
 
 ## 代码放在哪里
 
 | 目录 | 职责 | 对外接口 |
 | --- | --- | --- |
-| `packages/scene` | 纯 TypeScript。定义存档、命令及其运行时格式，处理变换、吸附、地形采样和庭院测量。 | `applyCommand(scene, command)` 返回更新后的场景和本次差异。几何查询只读取场景。 |
-| `apps/web/src/editor` | 管当前工具、选区、相机手势和未提交的拖动。鼠标、触屏和属性输入在这里汇合。 | 接收操作意图和场景坐标，发布预览，结束编辑时提交一次命令。 |
-| `apps/web/src/viewport` | 持有 Three.js 的相机、网格、材质和绘制循环。将指针位置换算为实体 ID、场景坐标或射线。 | 接收场景差异、选区和预览。网格、矩阵和逐帧指针位置留在视口内。 |
-| `apps/web/src/ui` | Vue 工作区、对象列表、属性面板和养护视图。 | 从编辑器读取选区和字段，按钮与快捷键调用同一操作。 |
-| `apps/api/src` | `http/` 与 `mcp/` 调用 `application/`。`storage/` 负责 PostgreSQL 和模型文件。 | 应用层按当前用户读取或修改 Deck。服务端和编辑预览共同使用 `packages/scene`。 |
-| `supabase/migrations` | SQL 表、索引及权限。 | 本地开发和托管环境使用同一套迁移。 |
+| `packages/scene` | 定义存档、命令和校验格式。 | `applyCommand(scene, command)` 返回更新后的场景。UI 和 MCP 共用错误码。 |
+| `apps/web/src/editor` | 处理手势、吸附、数值转换和未保存的编辑。 | 手势向视口查询落点和对象 ID，松手时提交一次变换。 |
+| `apps/web/src/viewport` | 持有 Three.js 的相机、网格、材质和绘制循环。 | 接收场景、选区、预览和配色。向编辑器返回普通坐标。 |
+| `apps/web/src/components` | 文件工具栏、视口、对象列表和属性面板。 | 组件通过 props 读取状态，通过事件提交操作。`App.vue` 组装工作区。 |
+| `apps/web/src/io` | HTTP 读写和 JSON 文件导入导出。 | 编辑器取得已保存的场景版本，错误码在显示时翻译。 |
+| `apps/api/src` | HTTP 处理命令，文件存储按版本串行写入，stdio MCP 调用同一 HTTP 服务。 | 开发代理、API 和 MCP 从 `config/local-service.ts` 取得本地服务地址。 |
 
-浏览器在应用入口组装 UI、编辑器和视口。共享包导出普通数据、函数和 Zod 格式定义，可在 Node 中直接验证吸附与日照计算。只有视口导入 Three.js，只有服务端连接 PostgreSQL。
+界面和画布共享主题，语言包负责文字、插值和数字格式。主题或语言的变化只影响呈现。[主题、语言包与编辑参数的维护入口](../README.md#extend-the-editor)
 
 ## 一份庭院怎样保存
 
@@ -34,7 +34,7 @@
 
 在样例地形上标出封闭洼地，再从低点向出口开一条连续下坡的浅沟。保持土壤、降雨条件和视角固定，检查原洼地的标记是否缩小或消失。切换画质后重复读取同一位置的高程和评估结果。
 
-## 从拖动到保存
+## 托管版的保存协议
 
 | 入口 | 行为 |
 | --- | --- |
