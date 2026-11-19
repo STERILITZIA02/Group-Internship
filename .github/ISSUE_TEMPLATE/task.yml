@@ -1,50 +1,23 @@
 name: Project task
-description: Propose a change and define how to verify it.
+description: Define a deliverable and its acceptance check.
 title: "[Task] "
 body:
-  - type: dropdown
-    id: repository
-    attributes:
-      label: Implementation repository
-      options:
-        - Group-Internship
-        - Demo-3d
-        - Demo-platform
-        - To be decided
   - type: textarea
     id: outcome
     attributes:
       label: Outcome
-      description: What should be achieved, and why does it matter?
+      description: What should someone be able to do when this ships?
     validations:
       required: true
   - type: textarea
     id: acceptance
     attributes:
-      label: Acceptance criteria
-      description: List observable conditions for completing this task.
-      placeholder: "- [ ] ..."
+      label: Acceptance check
+      description: Give the steps and observable result.
     validations:
       required: true
   - type: textarea
-    id: dependencies
+    id: context
     attributes:
-      label: Dependencies and context
-      description: Link related work, decisions, or blockers.
-  - type: textarea
-    id: scope
-    attributes:
-      label: Scope and starting context
-      description: Relevant files, current behaviour and constraints.
-  - type: textarea
-    id: handoff
-    attributes:
-      label: Agent handoff (optional)
-      description: Record the branch, completed work, checks, remaining work, and any question that needs a person.
-  - type: textarea
-    id: verification
-    attributes:
-      label: Verification plan
-      description: How will the team demonstrate that this task is complete?
-    validations:
-      required: true
+      label: Implementation context
+      description: Link starting files, dependencies or decisions that affect the work.

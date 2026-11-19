@@ -1,23 +1,21 @@
-name: Sprint plan and review
-description: Goals, review and follow-up for a two-week sprint.
-title: "[Sprint XX] "
+name: Sprint review
+description: Record the demo, feedback, carry-over and one improvement.
+title: "[Sprint review] "
 body:
   - type: textarea
-    id: goal
+    id: demo
     attributes:
-      label: Goal and dates
+      label: Outcome and demo
+      description: Link the milestone and evidence for the sprint goal.
+    validations:
+      required: true
   - type: textarea
-    id: work
+    id: followup
     attributes:
-      label: Planned work and owners
-      description: Link issues in this sprint milestone. Mark unresolved decisions.
-  - type: textarea
-    id: review
-    attributes:
-      label: Review and demo
-      description: Actual results, evidence, demo commits, and work carried forward.
+      label: Feedback and carry-over
+      description: Link follow-up issues and record the next decision for unfinished work.
   - type: textarea
     id: retro
     attributes:
-      label: Retrospective
-      description: What helped, what needs to change, and one action for next week.
+      label: Next sprint improvement
+      description: Choose one change to how the team works and who will try it.
