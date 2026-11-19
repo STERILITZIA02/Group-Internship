@@ -9,17 +9,12 @@ inputs; update relevant links when scope changes.
 
 ## Pages
 
-- Home, Project Description, Team, Course Requirements, and Project Plan.
+- Home, Project Description, Team, Sprint Plan, planning tools, and submissions.
 - Contract, including task agreements, crisis management, and the printable PDF.
 - Weekly Work Statements index and one page for each of Weeks 01–10.
 - Individual Work Statement Template for courses requiring separate statements.
 - Meeting Log, Decision and Risk Log, and Deliverables and Evidence.
-- Sidebar and footer for navigation and draft status.
-
-The course rubric and official statement format have not yet been supplied.
-All weekly pages are drafts, with no claimed hours, completed work, or approval.
-Confirm the required fields, deadlines, word limits, and submission channel
-before treating these pages as course-ready submissions.
+- Sidebar links to the project pages and team records.
 
 ## Editing and publishing
 
@@ -38,12 +33,6 @@ If `.wiki-local` already exists, only run the pull command. Edit its Markdown
 files, review the diff, commit the intended pages, and push to its default
 branch. Always pull first to preserve teammates' web edits. Do not force-push.
 
-Use each weekly page's individual-contribution section for every confirmed
-member. Add or remove placeholder rows only after confirming the roster.
-Record actual hours, not estimates presented as actuals. Link evidence and
-identify who reviewed the final statement. Publishing a Wiki page does not
-submit it to the university's course system.
-
 ## Contract PDF
 
 The editable contract is `docs/team-contract.md`. Its text is also published on
@@ -56,7 +45,7 @@ python3 scripts/export_team_contract.py
 
 Update the Wiki text from the same source, retain the download link, and check
 the PDF pages before publishing. Print on A4 at actual size. The final page has
-five separate spaces for signatures and dates. The current PDF is unsigned.
+five separate spaces for signatures and dates.
 
 ## Public information
 

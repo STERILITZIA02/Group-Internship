@@ -51,8 +51,6 @@ def build():
                           leading=12, spaceAfter=0, alignment=TA_LEFT)
     story = []
     lines = SOURCE.read_text(encoding='utf-8').splitlines()
-    edition_line = next(line for line in lines if line.startswith('**Draft for team discussion - '))
-    edition_date = edition_line.split(' - ', 1)[1].split('.**', 1)[0]
     i = 0
     while i < len(lines):
         line = lines[i].strip()
@@ -109,7 +107,6 @@ def build():
         canvas.line(18*mm, 15*mm, PAGE_WIDTH-18*mm, 15*mm)
         canvas.setFont('Helvetica', 8)
         canvas.setFillColor(colors.HexColor('#626c75'))
-        canvas.drawString(18*mm, 10*mm, f'luxluane | Team Contract | Draft {edition_date}')
         canvas.drawRightString(PAGE_WIDTH-18*mm, 10*mm, str(doc.page))
         canvas.restoreState()
 
