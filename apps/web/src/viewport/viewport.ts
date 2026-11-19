@@ -16,7 +16,20 @@ export function createViewport(canvas: HTMLCanvasElement, hooks: Hooks) {
   const world = new T.Scene()
   world.background = new T.Color('#eeeee6')
   world.fog = new T.FogExp2('#eeeee6', 0.025)
-  const grid = new T.GridHelper(120, 120, '#9ca599', '#c3c8bb')
+  const tile = document.createElement('canvas')
+  tile.width = tile.height = 64
+  const pen = tile.getContext('2d')!
+  pen.fillStyle = '#eeeee6'
+  pen.fillRect(0, 0, 64, 64)
+  pen.fillStyle = '#acb4a8'
+  pen.fillRect(0, 0, 2, 64)
+  pen.fillRect(0, 0, 64, 2)
+  const texture = new T.CanvasTexture(tile)
+  texture.colorSpace = T.SRGBColorSpace
+  texture.wrapS = texture.wrapT = T.RepeatWrapping
+  texture.repeat.set(120, 120)
+  const grid = new T.Mesh(new T.PlaneGeometry(120, 120), new T.MeshBasicMaterial({ map: texture }))
+  grid.rotation.x = -Math.PI / 2
   world.add(grid)
   const camera = new T.PerspectiveCamera(40, 1, 0.05, 400)
   let yaw = 0.65,
@@ -202,7 +215,9 @@ export function createViewport(canvas: HTMLCanvasElement, hooks: Hooks) {
       observer.disconnect()
       cancelAnimationFrame(frame)
       for (const id of meshes.keys()) drop(id)
-      grid.dispose()
+      grid.geometry.dispose()
+      grid.material.dispose()
+      texture.dispose()
       renderer.dispose()
     },
   }
