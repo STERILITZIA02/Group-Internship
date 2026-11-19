@@ -29,7 +29,7 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Open `http://127.0.0.1:5173`. Start with an empty grid, choose a polygon and click **Add polygon**. Dragging snaps to a 0.25 m grid. The inspector accepts exact X/Z coordinates in metres, rotation in degrees and uniform scale. Drag the background to orbit, or use two fingers to pan and zoom.
+Open `http://127.0.0.1:5173`. Choose a shape and click **Add polygon**. With **Select**, drag an object to snap it to the 0.25 m grid or drag the background to orbit. **Pan** moves the view even when the pointer starts on an object. Two fingers pan and zoom. Select an object to enter exact coordinates, rotation and scale in the inspector. [Workspace preview](docs/images/editor-workspace.png)
 
 Edits save to `data/scene.json` on the computer running the service. **Export JSON** downloads a portable scene and **Open file** imports it. **Reload** reads the latest saved revision, including edits made by an MCP client. A conflicting edit stays available to export. To use a different working file, set `SCENE_FILE` to an absolute path before startup.
 
@@ -43,7 +43,8 @@ Edits save to `data/scene.json` on the computer running the service. **Export JS
 
 - **Theme.** Edit the [CSS tokens](apps/web/src/styles/tokens.css). For a named theme, override them under `:root[data-theme="name"]` and set that attribute on the document root. The four `--viewport-*` colours take sRGB hex values and update the live canvas.
 - **Language.** Add a catalog beside [English](apps/web/src/i18n/locales/en.ts) and register its language tag and text direction in the [locale registry](apps/web/src/i18n/index.ts). Keep named placeholders such as `{shape}` and `{index}` in the translation. The editor matches browser language preferences and falls back to English.
-- **Interaction.** The [polygon presets](apps/web/src/editor/polygons.ts) supply both the creation menu and object names. [Editor settings](apps/web/src/editor/settings.ts) control placement and snapping. [Viewport settings](apps/web/src/viewport/settings.ts) control the camera, grid and rendering budget.
+- **Tools and panels.** [Select and Pan](apps/web/src/editor/tools.ts) implement pointer operations against the [viewport contract](apps/web/src/editor/viewport.ts). Add a tool there, its icon to the canvas toolbar and its name to the language catalog. The [workspace shell](apps/web/src/components/EditorWorkspace.vue) places the library and inspector beside the canvas on desktop or in the bottom panel on narrow screens.
+- **Scene content.** The [ground and polygon layers](apps/web/src/viewport/layers) own their Three.js resources. The ground layer supplies pointer intersections. The polygon layer maps picked meshes to stable scene IDs. [Editor settings](apps/web/src/editor/settings.ts) control placement and snapping, and [viewport settings](apps/web/src/viewport/settings.ts) control camera and render parameters.
 
 ### Agent access
 

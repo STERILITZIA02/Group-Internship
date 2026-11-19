@@ -1,5 +1,5 @@
 import { snapshotSchema, type EditRequest, type Snapshot } from '@garden/scene'
-import { isSceneErrorCode, SceneError, sceneRoutes } from '@garden/scene/protocol'
+import { commandRequest, isSceneErrorCode, SceneError, sceneRoutes } from '@garden/scene/protocol'
 
 async function readResponse(response: Response): Promise<Snapshot> {
   const body = await response.json()
@@ -15,12 +15,6 @@ export const sceneClient = {
     return readResponse(await fetch(sceneRoutes.read, { cache: 'no-store' }))
   },
   async edit(request: EditRequest) {
-    return readResponse(
-      await fetch(sceneRoutes.commands, {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(request),
-      }),
-    )
+    return readResponse(await fetch(sceneRoutes.commands, commandRequest(request)))
   },
 }

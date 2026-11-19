@@ -1,5 +1,5 @@
 import { onScopeDispose, shallowRef } from 'vue'
-import type { ViewportPalette } from '../viewport/settings'
+import type { ViewportPalette } from '../editor/viewport'
 
 export function useTheme() {
   const root = document.documentElement

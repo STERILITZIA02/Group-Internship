@@ -1,10 +1,3 @@
-export type ViewportPalette = {
-  ground: string
-  grid: string
-  object: string
-  selected: string
-}
-
 export const cameraSettings = {
   fov: 40,
   near: 0.05,

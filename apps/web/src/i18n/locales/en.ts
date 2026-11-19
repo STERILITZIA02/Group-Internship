@@ -2,6 +2,13 @@ import type { EditorErrorCode } from '../../editor/useScene'
 
 export const en = {
   page: { title: 'Scene editor · LuxLuane', heading: 'Scene editor' },
+  workspace: {
+    panels: 'Workspace panels',
+    library: 'Object library',
+    shapes: 'Shapes',
+    properties: 'Properties',
+    selectObject: 'Select an object on the canvas or in the list to edit its properties.',
+  },
   files: {
     label: 'Scene files',
     open: 'Open file',
@@ -14,6 +21,9 @@ export const en = {
     loading: 'Loading viewport…',
     unavailable: '3D unavailable. Use the object list and numeric controls.',
     camera: 'Camera controls',
+    tools: 'Canvas tools',
+    select: 'Select',
+    pan: 'Pan',
     zoomIn: 'Zoom in',
     zoomOut: 'Zoom out',
     reset: 'Reset view',
@@ -35,6 +45,7 @@ export const en = {
     z: 'Z (m)',
     degrees: 'Rotation (°)',
     scale: 'Scale',
+    positiveScale: 'Enter a scale greater than zero.',
     apply: 'Apply',
     remove: 'Remove',
   },
